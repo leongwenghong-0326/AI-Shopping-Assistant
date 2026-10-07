@@ -1,0 +1,42 @@
+# --- Private / local config ---
+includes/config.php
+includes/installed.lock
+
+# --- One-time repair / debug scripts (may contain secrets) ---
+db_check.php
+fix_admin.php
+tools/db_probe.php
+tools/seed_ai_settings.php
+
+# --- Uploaded & temporary files ---
+uploads/products/*
+!uploads/products/.htaccess
+!uploads/products/index.html
+uploads/cache/*
+!uploads/cache/.htaccess
+!uploads/cache/index.html
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.bak
+*.swp
+.idea/
+.vscode/
+*.sublime-*
+
+# --- Env / secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# --- Optional local notes ---
+notes.local.md
+TODO.local.md

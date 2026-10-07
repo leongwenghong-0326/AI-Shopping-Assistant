@@ -1,0 +1,14 @@
+# Prevent PHP execution in upload directory
+<FilesMatch "\.(?i:php|phtml|php3|php4|php5|php7|php8|phar|cgi|pl|py|asp|aspx|exe|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+Options -Indexes
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phar
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phar
+php_flag engine off
